@@ -97,9 +97,11 @@
     <header class="fixed top-0 left-0 right-0 bg-white shadow-sm border-b border-gray-200 h-16 flex items-center z-40">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <div class="flex items-center space-x-3">
+                 <!-- CAMBIO 1: Logo de Caja de Envío Rediseñado -->
                  <svg class="h-8 w-8 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9.75h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5M2.25 15.75l1.5-1.5-1.5-1.5m19.5 3l-1.5-1.5 1.5-1.5" />
-                </svg>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 15.75L3 10.5m9 5.25L21 10.5" />
+                 </svg>
                 <h1 class="text-xl sm:text-2xl font-extrabold text-gray-800 tracking-tight">Logística Pro</h1>
             </div>
             <span id="current-date-header" class="hidden sm:block font-semibold text-sm text-gray-500"></span>
@@ -115,11 +117,28 @@
     </main>
 
     <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-[0_-2px_5px_rgba(0,0,0,0.05)] border-t border-gray-200 h-20 grid grid-cols-5 z-50">
-        <button data-page="page-entregas" class="nav-item flex flex-col items-center justify-center text-gray-500 active"><svg class="h-7 w-7 mb-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span class="text-xs">Entregas</span></button>
-        <button data-page="page-config" class="nav-item flex flex-col items-center justify-center text-gray-500"><svg class="h-7 w-7 mb-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924-1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg><span class="text-xs">Configurar</span></button>
-        <button data-page="page-historial" class="nav-item flex flex-col items-center justify-center text-gray-500"><svg class="h-7 w-7 mb-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg><span class="text-xs">Historial</span></button>
-        <button data-page="page-planificador" class="nav-item flex flex-col items-center justify-center text-gray-500"><svg class="h-7 w-7 mb-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 16.382V5.618a1 1 0 00-1.447-.894L15 7m-6 13v- உண்மையில்" /></svg><span class="text-xs">Planificador ✨</span></button>
-        <button data-page="page-reportes" class="nav-item flex flex-col items-center justify-center text-gray-500"><svg class="h-7 w-7 mb-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg><span class="text-xs">Reportes</span></button>
+        <button data-page="page-entregas" class="nav-item flex flex-col items-center justify-center text-gray-500 active">
+            <svg class="h-7 w-7 mb-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span class="text-[11px]">Entregas</span>
+        </button>
+        <button data-page="page-historial" class="nav-item flex flex-col items-center justify-center text-gray-500">
+            <svg class="h-7 w-7 mb-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+            <span class="text-[11px]">Historial</span>
+        </button>
+        <button data-page="page-planificador" class="nav-item flex flex-col items-center justify-center text-gray-500">
+            <svg class="h-7 w-7 mb-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 16.382V5.618a1 1 0 00-1.447-.894L15 7m-6 13v- உண்மையில்" /></svg>
+            <!-- CAMBIO 2: Eliminado el ícono de estrella -->
+            <span class="text-[11px]">Planificador</span>
+        </button>
+        <button data-page="page-reportes" class="nav-item flex flex-col items-center justify-center text-gray-500">
+            <svg class="h-7 w-7 mb-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+            <span class="text-[11px]">Reportes</span>
+        </button>
+        <!-- CAMBIO 3: La sección de Configuración ahora está al final -->
+        <button data-page="page-config" class="nav-item flex flex-col items-center justify-center text-gray-500">
+            <svg class="h-7 w-7 mb-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924-1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            <span class="text-[11px]">Configurar</span>
+        </button>
     </nav>
     
 <script>
@@ -128,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('page-entregas').innerHTML = `<div class="grid grid-cols-1 lg:grid-cols-3 gap-6"><div class="lg:col-span-1"><div class="card p-5 sticky top-20"><h3 class="font-bold text-lg mb-4 text-gray-800">Registrar Entrega</h3><div class="space-y-4"><div><label class="block text-sm font-medium text-gray-600 mb-1">Para la fecha:</label><p id="selected-date-display" class="font-bold text-red-600 text-lg"></p></div><div><label for="entregaMunicipioSelect" class="block text-sm font-medium text-gray-600 mb-1">Municipio</label><select id="entregaMunicipioSelect" class="input-field"></select></div><div class="grid grid-cols-2 gap-4"><div><label for="entregaPaqueteSelect" class="block text-sm font-medium text-gray-600 mb-1">Tipo</label><select id="entregaPaqueteSelect" class="input-field"><option>MT</option><option>PT</option><option>DE</option></select></div><div><label for="cantidadInput" class="block text-sm font-medium text-gray-600 mb-1">Cantidad</label><input type="number" id="cantidadInput" value="1" class="input-field"></div></div><div id="kilos-adicionales-wrapper" class="hidden"><label for="kilosAdicionalesInput" class="block text-sm font-medium text-gray-600 mb-1">Kilos Adicionales Totales (para MT)</label><input type="number" id="kilosAdicionalesInput" placeholder="Ej: 5" class="input-field"></div><button id="addEntregaBtn" class="w-full btn-primary !mt-6">Añadir Registro</button></div></div></div><div class="lg:col-span-2 space-y-6"><div class="card p-5"><h3 class="font-bold text-lg mb-4 text-gray-800">Control de Jornada</h3><div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-end"><div><label for="entregaDateInput" class="block text-sm font-medium text-gray-600 mb-1">Seleccionar Fecha</label><input type="date" id="entregaDateInput" class="input-field"></div><div class="flex gap-2"><div class="flex-grow"><label for="planillaInput" class="block text-sm font-medium text-gray-600 mb-1">N° de Planilla</label><input type="text" id="planillaInput" placeholder="Ej: P-12345" class="input-field"></div><button id="savePlanillaBtn" class="btn-light self-end !px-3"><svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M5.433 13.917l1.262-3.155A4 4 0 017.58 9.42l6.92-6.918a2.121 2.121 0 013 3l-6.92 6.918c-.383.383-.84.685-1.343.886l-3.154 1.262a.5.5 0 01-.65-.65z" /><path d="M3.5 5.75c0-.69.56-1.25 1.25-1.25H10A.75.75 0 0010 3H4.75A2.75 2.75 0 002 5.75v9.5A2.75 2.75 0 004.75 18h9.5A2.75 2.75 0 0017 15.25V10a.75.75 0 00-1.5 0v5.25c0 .69-.56 1.25-1.25 1.25h-9.5c-.69 0-1.25-.56-1.25-1.25v-9.5z" /></svg></button></div></div></div><div class="card"><div class="p-5 border-b border-gray-200 flex justify-between items-center"><h3 id="resumen-title" class="font-bold text-lg text-gray-800">Resumen del Día</h3><button id="clearDayBtn" class="btn-danger !text-xs !py-1 !px-2">Limpiar <span id="clear-day-label"></span></button></div><div class="overflow-x-auto"><table class="min-w-full divide-y divide-gray-200"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Municipio</th><th class="px-6 py-3 text-center text-xs font-bold text-gray-500 uppercase tracking-wider">Tipo</th><th class="px-6 py-3 text-center text-xs font-bold text-gray-500 uppercase tracking-wider">Cantidad</th><th class="px-6 py-3 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Valor</th></tr></thead><tbody id="resumenTableBody" class="bg-white divide-y divide-gray-200"></tbody></table></div><div class="bg-gray-50 px-6 py-4 flex justify-end items-center"><span class="text-sm font-bold text-gray-600 uppercase mr-4">Total del Día:</span><span id="totalGeneral" class="text-xl font-extrabold text-red-600"></span></div></div></div></div>`;
     document.getElementById('page-config').innerHTML = `<div class="card p-5"><h3 class="font-bold text-lg mb-4 text-gray-800">Gestionar Municipios</h3><div class="flex flex-col sm:flex-row gap-4 mb-4"><input type="text" id="municipioInput" placeholder="Nombre del nuevo municipio" class="input-field flex-grow"><button id="addMunicipioBtn" class="btn-secondary w-full sm:w-auto">Agregar</button></div><div id="municipiosList" class="space-y-2 max-h-48 overflow-y-auto pr-2"></div></div><div class="card p-5"><h3 class="font-bold text-lg mb-4 text-gray-800">Gestionar Tarifas Estándar</h3><div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4 items-end"><div class="md:col-span-2"><label for="tarifaMunicipioSelect" class="block text-sm font-medium text-gray-600 mb-1">Municipio</label><select id="tarifaMunicipioSelect" class="input-field"></select></div><div><label for="tarifaPaqueteSelect" class="block text-sm font-medium text-gray-600 mb-1">Tipo</label><select id="tarifaPaqueteSelect" class="input-field"><option>MT</option><option>PT</option><option>DE</option></select></div><div><label for="tarifaInput" class="block text-sm font-medium text-gray-600 mb-1">Valor</label><input type="number" id="tarifaInput" placeholder="Ej: 8500" class="input-field"></div></div><button id="setTarifaBtn" class="w-full btn-secondary">Asignar Tarifa</button></div><div class="card p-5"><h3 class="font-bold text-lg mb-4 text-gray-800">Tarifa Kilo Adicional (solo MT)</h3><div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-end"><div class="sm:col-span-1"><label for="kiloMunicipioSelect" class="block text-sm font-medium text-gray-600 mb-1">Municipio</label><select id="kiloMunicipioSelect" class="input-field"></select></div><div><label for="kiloTarifaInput" class="block text-sm font-medium text-gray-600 mb-1">Valor por Kilo Adicional</label><input type="number" id="kiloTarifaInput" placeholder="Ej: 100" class="input-field"></div></div><button id="setKiloTarifaBtn" class="w-full btn-secondary mt-4">Guardar Tarifa Kilo</button></div><div class="card"><div class="p-5 border-b border-gray-200"><h3 class="font-bold text-lg text-gray-800">Tabla de Tarifas</h3></div><div class="overflow-x-auto"><table class="min-w-full divide-y divide-gray-200"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Municipio</th><th class="px-6 py-3 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Tarifa MT</th><th class="px-6 py-3 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Tarifa PT</th><th class="px-6 py-3 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Tarifa DE</th><th class="px-6 py-3 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Kilo Adic. (MT)</th></tr></thead><tbody id="tarifasTableBody" class="bg-white divide-y divide-gray-200"></tbody></table></div></div>`;
     document.getElementById('page-historial').innerHTML = `<div class="card p-5"><h3 class="font-bold text-lg mb-4 text-gray-800">Filtrar Historial</h3><div class="mb-4 space-y-3"><div class="flex flex-wrap gap-2" id="quick-filters-historial"></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-gray-200"><div class="relative"><label for="historialFechaInicio" class="block text-sm font-medium text-gray-600 mb-1">Fecha de Inicio</label><input type="date" id="historialFechaInicio" class="input-field"></div><div class="relative"><label for="historialFechaFin" class="block text-sm font-medium text-gray-600 mb-1">Fecha de Fin</label><input type="date" id="historialFechaFin" class="input-field"></div></div></div></div><div class="card"><div class="p-5 border-b border-gray-200"><h3 id="historial-table-title" class="font-bold text-lg text-gray-800">Resultados</h3></div><div class="overflow-x-auto"><table class="min-w-full divide-y divide-gray-200"><thead class="bg-gray-50"><tr><th class="px-4 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Fecha</th><th class="px-4 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Planilla</th><th class="px-4 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Municipio</th><th class="px-4 py-3 text-center text-xs font-bold text-gray-500 uppercase tracking-wider">Tipo</th><th class="px-4 py-3 text-center text-xs font-bold text-gray-500 uppercase tracking-wider">Cant.</th><th class="px-4 py-3 text-center text-xs font-bold text-gray-500 uppercase tracking-wider">K.A.</th><th class="px-4 py-3 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Valor Total</th></tr></thead><tbody id="historialTableBody" class="bg-white divide-y divide-gray-200"></tbody></table></div><div id="historial-summary" class="bg-gray-50 px-6 py-4 flex justify-end items-center"></div></div>`;
-    document.getElementById('page-planificador').innerHTML = `<div class="card p-5"><h3 class="font-bold text-lg mb-4 text-gray-800">Planificador de Ruta IA ✨</h3><p class="text-sm text-gray-600 mb-4">Optimiza la ruta para la fecha seleccionada en la pestaña 'Entregas'.</p><div id="planner-destinations" class="mb-4"></div><button id="generate-route-plan-btn" class="w-full btn-primary"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 2.5a.5.5 0 01.5-.5h8a.5.5 0 01.5.5v.634a4.503 4.503 0 011.833 2.193l.352.607a2.5 2.5 0 01.315 1.1V15.5a.5.5 0 01-.5.5h-1.375a.5.5 0 01-.5-.5v-1.25a.75.75 0 00-.75-.75h-5.75a.75.75 0 00-.75.75v1.25a.5.5 0 01-.5.5H3.5a.5.5 0 01-.5-.5v-8.456a2.5 2.5 0 01.315-1.1l.352-.607A4.503 4.503 0 015 3.134V2.5zM6 9.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm7 0a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM5.006 5a3.503 3.503 0 00-1.22 1.43l-.352.608a1.5 1.5 0 00-.189.66V10h13V7.705a1.5 1.5 0 00-.19-.66l-.351-.608A3.503 3.503 0 0014.994 5H5.006z" clip-rule="evenodd" /></svg>Optimizar Ruta del Día</button></div><div id="route-plan-result" class="card hidden"><div class="p-5 border-b border-gray-200"><h3 class="font-bold text-lg text-gray-800">Plan de Ruta Sugerido</h3></div><div class="p-5"><div id="route-plan-content" class="gemini-result text-gray-700"></div></div></div>`;
+    document.getElementById('page-planificador').innerHTML = `<div class="card p-5"><h3 class="font-bold text-lg mb-4 text-gray-800">Planificador de Ruta IA</h3><p class="text-sm text-gray-600 mb-4">Optimiza la ruta para la fecha seleccionada en la pestaña 'Entregas'.</p><div id="planner-destinations" class="mb-4"></div><button id="generate-route-plan-btn" class="w-full btn-primary"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 2.5a.5.5 0 01.5-.5h8a.5.5 0 01.5.5v.634a4.503 4.503 0 011.833 2.193l.352.607a2.5 2.5 0 01.315 1.1V15.5a.5.5 0 01-.5.5h-1.375a.5.5 0 01-.5-.5v-1.25a.75.75 0 00-.75-.75h-5.75a.75.75 0 00-.75.75v1.25a.5.5 0 01-.5.5H3.5a.5.5 0 01-.5-.5v-8.456a2.5 2.5 0 01.315-1.1l.352-.607A4.503 4.503 0 015 3.134V2.5zM6 9.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm7 0a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM5.006 5a3.503 3.503 0 00-1.22 1.43l-.352.608a1.5 1.5 0 00-.189.66V10h13V7.705a1.5 1.5 0 00-.19-.66l-.351-.608A3.503 3.503 0 0014.994 5H5.006z" clip-rule="evenodd" /></svg>Optimizar Ruta del Día</button></div><div id="route-plan-result" class="card hidden"><div class="p-5 border-b border-gray-200"><h3 class="font-bold text-lg text-gray-800">Plan de Ruta Sugerido</h3></div><div class="p-5"><div id="route-plan-content" class="gemini-result text-gray-700"></div></div></div>`;
     document.getElementById('page-reportes').innerHTML = `<div class="card p-5 max-w-2xl mx-auto"><h3 class="font-bold text-lg mb-4 text-gray-800">Generador de Reportes</h3><div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6"><div><label for="reporteFechaInicio" class="block text-sm font-medium text-gray-600 mb-1">Desde</label><input type="date" id="reporteFechaInicio" class="input-field"></div><div><label for="reporteFechaFin" class="block text-sm font-medium text-gray-600 mb-1">Hasta</label><input type="date" id="reporteFechaFin" class="input-field"></div></div><div class="flex flex-col sm:flex-row gap-4"><button id="generarReporteBtn" class="w-full btn-secondary flex-1"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" /></svg>Descargar PDF Detallado</button><button id="analyze-report-btn" class="w-full btn-primary flex-1">✨ Analizar Rendimiento</button></div></div><div id="report-analysis-result" class="card hidden max-w-2xl mx-auto"><div class="p-5 border-b border-gray-200"><h3 class="font-bold text-lg text-gray-800">Análisis de Rendimiento IA</h3></div><div class="p-5"><div id="report-analysis-content" class="gemini-result text-gray-700"></div></div></div>`;
 
     // --- LIBRERÍAS EXTERNAS ---
@@ -210,85 +229,28 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderPlanilla(selectedDate) { planillaInput.value = state.planillas[selectedDate] || ''; }
     function renderPlanner() { const selectedDate = entregaDateInput.value; const destinos = [...new Set(state.entregas.filter(e => e.date === selectedDate).map(e => e.municipio))]; if (destinos.length === 0) { plannerDestinations.innerHTML = `<p class="text-center text-gray-500 py-4">No hay destinos registrados para la fecha seleccionada.</p>`; generateRoutePlanBtn.disabled = true; } else { plannerDestinations.innerHTML = `<p class="text-sm font-medium text-gray-600 mb-2">Destinos para ${formatDate(selectedDate)}:</p><div class="flex flex-wrap gap-2">${destinos.map(d => `<span class="bg-gray-100 text-gray-700 text-sm font-semibold px-3 py-1 rounded-full">${d}</span>`).join('')}</div>`; generateRoutePlanBtn.disabled = false; } routePlanResult.classList.add('hidden'); }
     function toggleKilosInput() { if (entregaPaqueteSelect.value === 'MT') { kilosAdicionalesWrapper.classList.remove('hidden'); } else { kilosAdicionalesWrapper.classList.add('hidden'); kilosAdicionalesInput.value = ''; } }
-
-    // --- NUEVA LÓGICA DE HISTORIAL ---
     function renderHistorial() {
-        const startDate = historialFechaInicio.value;
-        const endDate = historialFechaFin.value;
-        if (!startDate || !endDate) return;
-
+        const startDate = historialFechaInicio.value; const endDate = historialFechaFin.value; if (!startDate || !endDate) return;
         const filteredEntregas = state.entregas.filter(e => e.date >= startDate && e.date <= endDate);
         filteredEntregas.sort((a, b) => b.date.localeCompare(a.date) || a.municipio.localeCompare(b.municipio));
-
-        historialTableBody.innerHTML = '';
-        let totalPeriodo = 0;
-
-        if (filteredEntregas.length === 0) {
-            historialTableBody.innerHTML = `<tr><td colspan="7" class="text-center text-gray-500 py-8">No hay entregas en el periodo seleccionado.</td></tr>`;
-        } else {
-            filteredEntregas.forEach(e => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">${formatDateShort(e.date)}</td>
-                    <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-500">${state.planillas[e.date] || '-'}</td>
-                    <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">${e.municipio}</td>
-                    <td class="px-4 py-3 whitespace-nowrap text-sm text-center">${e.tipo}</td>
-                    <td class="px-4 py-3 whitespace-nowrap text-sm text-center">${e.cantidad}</td>
-                    <td class="px-4 py-3 whitespace-nowrap text-sm text-center">${e.kilosAdicionales > 0 ? e.kilosAdicionales + ' kg' : '-'}</td>
-                    <td class="px-4 py-3 whitespace-nowrap text-sm text-right font-semibold text-gray-700">${formatCurrency(e.valorTotal)}</td>
-                `;
-                historialTableBody.appendChild(tr);
-                totalPeriodo += e.valorTotal;
-            });
-        }
+        historialTableBody.innerHTML = ''; let totalPeriodo = 0;
+        if (filteredEntregas.length === 0) { historialTableBody.innerHTML = `<tr><td colspan="7" class="text-center text-gray-500 py-8">No hay entregas en el periodo seleccionado.</td></tr>`; } else { filteredEntregas.forEach(e => { const tr = document.createElement('tr'); tr.innerHTML = `<td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">${formatDateShort(e.date)}</td><td class="px-4 py-3 whitespace-nowrap text-sm text-gray-500">${state.planillas[e.date] || '-'}</td><td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">${e.municipio}</td><td class="px-4 py-3 whitespace-nowrap text-sm text-center">${e.tipo}</td><td class="px-4 py-3 whitespace-nowrap text-sm text-center">${e.cantidad}</td><td class="px-4 py-3 whitespace-nowrap text-sm text-center">${e.kilosAdicionales > 0 ? e.kilosAdicionales + ' kg' : '-'}</td><td class="px-4 py-3 whitespace-nowrap text-sm text-right font-semibold text-gray-700">${formatCurrency(e.valorTotal)}</td>`; historialTableBody.appendChild(tr); totalPeriodo += e.valorTotal; }); }
         historialSummary.innerHTML = `<span class="text-sm font-bold text-gray-600 uppercase mr-4">Total del Periodo:</span><span class="text-xl font-extrabold text-red-600">${formatCurrency(totalPeriodo)}</span>`;
     }
-
     function setupHistorialFilters() {
-        const filters = [
-            { label: 'Últimos 15 días', days: 15 },
-            { label: 'Último mes', days: 30 },
-            { label: '1ra Quincena', quincena: 1 },
-            { label: '2da Quincena', quincena: 2 },
-        ];
+        const filters = [{ label: 'Últimos 15 días', days: 15 }, { label: 'Último mes', days: 30 }, { label: '1ra Quincena', quincena: 1 }, { label: '2da Quincena', quincena: 2 },];
         quickFiltersHistorial.innerHTML = filters.map(f => `<button class="filter-btn text-sm" data-days="${f.days || ''}" data-quincena="${f.quincena || ''}">${f.label}</button>`).join('');
-
         quickFiltersHistorial.addEventListener('click', e => {
             if (e.target.tagName !== 'BUTTON') return;
-            
-            const allBtns = quickFiltersHistorial.querySelectorAll('button');
-            allBtns.forEach(btn => btn.classList.remove('active'));
-            e.target.classList.add('active');
-
-            const days = parseInt(e.target.dataset.days);
-            const quincena = parseInt(e.target.dataset.quincena);
-            const today = new Date();
-            let startDate, endDate;
-
-            if (days) {
-                endDate = new Date();
-                startDate = new Date();
-                startDate.setDate(endDate.getDate() - (days - 1));
-            } else if (quincena) {
-                const year = today.getFullYear();
-                const month = today.getMonth();
-                if (quincena === 1) {
-                    startDate = new Date(year, month, 1);
-                    endDate = new Date(year, month, 15);
-                } else {
-                    startDate = new Date(year, month, 16);
-                    endDate = new Date(year, month + 1, 0); // Last day of current month
-                }
-            }
-            historialFechaInicio.value = startDate.toISOString().split('T')[0];
-            historialFechaFin.value = endDate.toISOString().split('T')[0];
-            renderHistorial();
+            const allBtns = quickFiltersHistorial.querySelectorAll('button'); allBtns.forEach(btn => btn.classList.remove('active')); e.target.classList.add('active');
+            const days = parseInt(e.target.dataset.days); const quincena = parseInt(e.target.dataset.quincena);
+            const today = new Date(); let startDate, endDate;
+            if (days) { endDate = new Date(); startDate = new Date(); startDate.setDate(endDate.getDate() - (days - 1));
+            } else if (quincena) { const year = today.getFullYear(); const month = today.getMonth(); if (quincena === 1) { startDate = new Date(year, month, 1); endDate = new Date(year, month, 15); } else { startDate = new Date(year, month, 16); endDate = new Date(year, month + 1, 0); } }
+            historialFechaInicio.value = startDate.toISOString().split('T')[0]; historialFechaFin.value = endDate.toISOString().split('T')[0]; renderHistorial();
         });
-
         historialFechaInicio.addEventListener('input', () => { quickFiltersHistorial.querySelectorAll('button').forEach(b => b.classList.remove('active')); renderHistorial(); });
         historialFechaFin.addEventListener('input', () => { quickFiltersHistorial.querySelectorAll('button').forEach(b => b.classList.remove('active')); renderHistorial(); });
-
-        // Activar filtro por defecto
         quickFiltersHistorial.querySelector('[data-days="15"]').click();
     }
 
@@ -338,9 +300,9 @@ document.addEventListener('DOMContentLoaded', () => {
     generateRoutePlanBtn.addEventListener('click', async () => { const selectedDate = entregaDateInput.value; const destinos = [...new Set(state.entregas.filter(e => e.date === selectedDate).map(e => e.municipio))]; if (destinos.length < 2) { showToast('Se necesitan al menos 2 destinos para optimizar la ruta.', 'error'); return; } const prompt = `Actúa como un experto en logística de Colombia. Crea un plan de ruta eficiente para un conductor que debe hacer entregas en los siguientes municipios: ${destinos.join(', ')}. Sugiere un orden lógico para visitar los municipios, comenzando desde el más cercano si es posible (asume un punto de partida genérico como una ciudad principal cercana, por ejemplo Bogotá si hay municipios de Cundinamarca), y añade una breve nota útil para cada parada. Presenta el resultado como una lista numerada.`; routePlanResult.classList.remove('hidden'); routePlanContent.innerHTML = '<div class="flex justify-center items-center py-8"><div class="loader"></div></div>'; const plan = await callGemini(prompt, generateRoutePlanBtn); if (plan) { routePlanContent.textContent = plan; } else { routePlanContent.innerHTML = '<p class="text-center text-red-500">No se pudo generar el plan de ruta.</p>'; } });
 
     // --- PERSISTENCIA E INICIALIZACIÓN ---
-    function saveAndRender() { localStorage.setItem('logisticaAppState_v9', JSON.stringify(state)); renderAll(); }
+    function saveAndRender() { localStorage.setItem('logisticaAppState_v11', JSON.stringify(state)); renderAll(); }
     function init() {
-        const savedState = localStorage.getItem('logisticaAppState_v9');
+        const savedState = localStorage.getItem('logisticaAppState_v11');
         if (savedState) { const parsedState = JSON.parse(savedState); state = { ...{ municipios: [], tarifas: {}, entregas: [], planillas: {}, tarifasKilo: {} }, ...parsedState }; }
         currentDateHeaderEl.textContent = formatDate(getTodaysDate());
         entregaDateInput.value = getTodaysDate();
