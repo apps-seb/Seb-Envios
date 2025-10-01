@@ -372,8 +372,9 @@ function initializeAppLogic(user) {
                                 <tr>
                                     <th class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Detalle</th>
                                     <th class="px-6 py-3 text-center text-xs font-bold text-gray-500 uppercase tracking-wider">Tipo</th>
-                                    <th class="px-6 py-3 text-center text-xs font-bold text-gray-500 uppercase tracking-wider">Cantidad</th>
+                                    <th class="px-6 py-3 text-center text-xs font-bold text-gray-500 uppercase tracking-wider">Cant.</th>
                                     <th class="px-6 py-3 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Valor</th>
+                                    <th class="px-1 py-3 text-center text-xs font-bold text-gray-500 uppercase tracking-wider"></th>
                                 </tr>
                             </thead>
                             <tbody id="resumenTableBody" class="bg-white divide-y divide-gray-200"></tbody>
@@ -524,27 +525,27 @@ function initializeAppLogic(user) {
         const granTotal = entregasDelDia.reduce((sum, e) => sum + e.valorTotal, 0) + devolucionesDelDia.reduce((sum, d) => sum + d.valor, 0);
 
         if (entregasDelDia.length === 0 && devolucionesDelDia.length === 0) {
-            resumenTableBody.innerHTML = `<tr><td colspan="4" class="text-center text-gray-500 py-8">No hay registros para esta fecha.</td></tr>`;
+            resumenTableBody.innerHTML = `<tr><td colspan="5" class="text-center text-gray-500 py-8">No hay registros para esta fecha.</td></tr>`;
         } else {
             const groupedByPlanilla = entregasDelDia.reduce((acc, entrega) => { const planilla = entrega.planilla || 'Sin Planilla'; if (!acc[planilla]) acc[planilla] = []; acc[planilla].push(entrega); return acc; }, {});
             for (const planilla in groupedByPlanilla) {
-                resumenTableBody.innerHTML += `<tr><td colspan="4" class="px-6 py-2 bg-gray-100 text-gray-800 font-bold text-sm">Planilla: ${planilla}</td></tr>`;
+                resumenTableBody.innerHTML += `<tr><td colspan="5" class="px-6 py-2 bg-gray-100 text-gray-800 font-bold text-sm">Planilla: ${planilla}</td></tr>`;
                 let subtotalPlanilla = 0;
                 groupedByPlanilla[planilla].forEach(e => {
                     const tr = document.createElement('tr');
                     let municipioDisplay = e.municipio;
                     if (e.tipo === 'MT' && e.kilosAdicionales > 0) { municipioDisplay += ` <span class="text-xs text-blue-500 font-normal">(+${e.kilosAdicionales} kg)</span>`; }
-                    tr.innerHTML = `<td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">${municipioDisplay}</td><td class="px-6 py-4 whitespace-nowrap text-center font-semibold"><span class="bg-gray-100 text-gray-700 text-xs font-bold px-2 py-1 rounded-full">${e.tipo}</span></td><td class="px-6 py-4 whitespace-nowrap text-center text-gray-600">${e.cantidad}</td><td class="px-6 py-4 whitespace-nowrap text-right font-bold text-gray-700">${formatCurrency(e.valorTotal)}</td>`;
+                    tr.innerHTML = `<td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">${municipioDisplay}</td><td class="px-6 py-4 whitespace-nowrap text-center font-semibold"><span class="bg-gray-100 text-gray-700 text-xs font-bold px-2 py-1 rounded-full">${e.tipo}</span></td><td class="px-6 py-4 whitespace-nowrap text-center text-gray-600">${e.cantidad}</td><td class="px-6 py-4 whitespace-nowrap text-right font-bold text-gray-700">${formatCurrency(e.valorTotal)}</td><td></td>`;
                     resumenTableBody.appendChild(tr);
                     subtotalPlanilla += e.valorTotal;
                 });
-                resumenTableBody.innerHTML += `<tr><td colspan="3" class="px-6 py-2 text-right font-bold text-gray-600">Subtotal Planilla:</td><td class="px-6 py-2 text-right font-extrabold text-gray-800">${formatCurrency(subtotalPlanilla)}</td></tr>`;
+                resumenTableBody.innerHTML += `<tr><td colspan="4" class="px-6 py-2 text-right font-bold text-gray-600">Subtotal Planilla:</td><td class="px-6 py-2 text-right font-extrabold text-gray-800">${formatCurrency(subtotalPlanilla)}</td></tr>`;
             }
             if (devolucionesDelDia.length > 0) {
-                resumenTableBody.innerHTML += `<tr><td colspan="4" class="px-6 py-2 bg-red-100 text-red-800 font-bold text-sm">Devoluciones del Día</td></tr>`;
+                resumenTableBody.innerHTML += `<tr><td colspan="5" class="px-6 py-2 bg-red-100 text-red-800 font-bold text-sm">Devoluciones del Día</td></tr>`;
                 devolucionesDelDia.forEach(d => {
                     const tr = document.createElement('tr');
-                    tr.innerHTML = `<td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">${d.municipio} <span class="text-xs text-gray-400">(${d.guia})</span></td><td class="px-6 py-4 whitespace-nowrap text-center font-semibold"><span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded-full">${d.tipo}</span></td><td class="px-6 py-4 whitespace-nowrap text-center text-gray-600">1</td><td class="px-6 py-4 whitespace-nowrap text-right font-bold text-red-600">${formatCurrency(d.valor)}</td>`;
+                    tr.innerHTML = `<td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">${d.municipio} <span class="text-xs text-gray-400">(${d.guia})</span></td><td class="px-6 py-4 whitespace-nowrap text-center font-semibold"><span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded-full">${d.tipo}</span></td><td class="px-6 py-4 whitespace-nowrap text-center text-gray-600">1</td><td class="px-6 py-4 whitespace-nowrap text-right font-bold text-red-600">${formatCurrency(d.valor)}</td><td class="px-1 py-4 text-center"><button class="btn-danger !p-1 !text-xs delete-devolucion-btn" data-id="${d.id}">x</button></td>`;
                     resumenTableBody.appendChild(tr);
                 });
             }
@@ -555,7 +556,6 @@ function initializeAppLogic(user) {
     function toggleKilosInput() { if (entregaPaqueteSelect.value === 'MT') { kilosAdicionalesWrapper.classList.remove('hidden'); } else { kilosAdicionalesWrapper.classList.add('hidden'); kilosAdicionalesInput.value = ''; } }
     function renderHistorial() {
         const startDate = historialFechaInicio.value; const endDate = historialFechaFin.value; if (!startDate || !endDate) return;
-        
         const filteredEntregas = state.entregas.filter(e => e.date >= startDate && e.date <= endDate).map(e => ({...e, isReturn: false}));
         const filteredDevoluciones = state.devoluciones.filter(d => d.date >= startDate && d.date <= endDate).map(d => ({...d, isReturn: true, planilla: d.guia, cantidad: 1, valorTotal: d.valor, kilosAdicionales: 0}));
         const combinedData = [...filteredEntregas, ...filteredDevoluciones].sort((a, b) => b.date.localeCompare(a.date));
@@ -568,13 +568,7 @@ function initializeAppLogic(user) {
             combinedData.forEach(e => {
                 const tr = document.createElement('tr');
                 const valorClass = e.isReturn ? 'text-red-600' : 'text-gray-700';
-                tr.innerHTML = `<td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">${formatDateShort(e.date)}</td>
-                                <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-500">${e.planilla || '-'}</td>
-                                <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">${e.municipio}</td>
-                                <td class="px-4 py-3 whitespace-nowrap text-sm text-center">${e.tipo}</td>
-                                <td class="px-4 py-3 whitespace-nowrap text-sm text-center">${e.cantidad}</td>
-                                <td class="px-4 py-3 whitespace-nowrap text-sm text-center">${e.kilosAdicionales > 0 ? e.kilosAdicionales + ' kg' : '-'}</td>
-                                <td class="px-4 py-3 whitespace-nowrap text-sm text-right font-semibold ${valorClass}">${formatCurrency(e.valorTotal)}</td>`;
+                tr.innerHTML = `<td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">${formatDateShort(e.date)}</td><td class="px-4 py-3 whitespace-nowrap text-sm text-gray-500">${e.planilla || '-'}</td><td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">${e.municipio}</td><td class="px-4 py-3 whitespace-nowrap text-sm text-center">${e.tipo}</td><td class="px-4 py-3 whitespace-nowrap text-sm text-center">${e.cantidad}</td><td class="px-4 py-3 whitespace-nowrap text-sm text-center">${e.kilosAdicionales > 0 ? e.kilosAdicionales + ' kg' : '-'}</td><td class="px-4 py-3 whitespace-nowrap text-sm text-right font-semibold ${valorClass}">${formatCurrency(e.valorTotal)}</td>`;
                 historialTableBody.appendChild(tr); 
                 totalPeriodo += e.valorTotal; 
             }); 
@@ -624,7 +618,17 @@ function initializeAppLogic(user) {
         state.devoluciones.push(nuevaDevolucion);
         guiaDevolucionInput.value = '';
         saveAndRender();
-        showToast(`Devolución de guía ${guia} registrada. Se dedujo ${formatCurrency(tarifa)}.`, 'success');
+        showToast(`Devolución de guía ${guia} registrada.`, 'success');
+    });
+    resumenTableBody.addEventListener('click', (e) => {
+        if (e.target.classList.contains('delete-devolucion-btn')) {
+            const returnId = Number(e.target.dataset.id);
+            if (confirm('¿Estás seguro de que quieres eliminar esta devolución? Esta acción no se puede deshacer.')) {
+                state.devoluciones = state.devoluciones.filter(d => d.id !== returnId);
+                saveAndRender();
+                showToast('Devolución eliminada correctamente.', 'success');
+            }
+        }
     });
     generarReporteBtn.addEventListener('click', () => {
         const [fechaInicio, fechaFin] = [reporteFechaInicio.value, reporteFechaFin.value];
